@@ -16,13 +16,25 @@ class App extends React.Component {
     this.fetchTweets = this.fetchTweets.bind(this);
   }
 
-  // TODO: componentWillMount() 
+  // TODO: 
+  componentWillMount() {
+    this.fetchTweets();
+  } 
 
-  // TODO: componentDidMount() 
+  // TODO: 
+  componentDidMount() {
+    this.startInterval();
+  }
 
-  // TODO: componentWillUnmount()
+  // TODO: 
+  componentWillUnmount() {
+    this.cleanUpInterval();
+  }
 
-  // TODO: componentDidUpdate()
+  // TODO: 
+  componentDidUpdate() {
+    this.updateChart(this.state.latestTweets.length);
+  }
   
   updateChart(numTweets) {
     update(numTweets);
